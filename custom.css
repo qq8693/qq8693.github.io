@@ -1,0 +1,46 @@
+.tab-button{
+    flex: 1 1 calc(33.33% - 0.35rem);
+    min-width: 0;
+    white-space: normal;
+    word-break: break-all;
+    text-align: center;
+}
+
+.app-tab-wrapper{
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+
+.category-card-desc{
+    white-space: normal;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+/* 顶部导航：保证 logo 与分享按钮尺寸稳定，标题过长自动换行 */
+.nav-logo{
+    flex: 0 0 auto;
+}
+
+.nav-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-logo-container{
+    flex: 1 1 auto;
+    min-width: 0;                /* 允许标题区域收缩 */
+}
+
+.nav-title{
+    white-space: normal;
+    word-break: break-word;
+}
+
+.nav-action-button{
+    flex-shrink: 0;              /* 不被标题压缩变形 */
+    white-space: nowrap;
+}
