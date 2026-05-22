@@ -1,1 +1,498 @@
-<html> EEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRRROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</html>
+
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <html lang="zh-cn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>张顺导航网:猪猪侠.cc</title>
+    <meta name="keywords" content="点开客服添加张顺旺旺拿返现送扶持！！！">
+    <meta name="description" content="">
+    <link rel="icon" href="20260411_img_69da66d88ef1f.png" type="image/x-icon">
+    <link rel="shortcut icon" href="20260411_img_69da66d88ef1f.png" type="image/x-icon">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon" href="20260411_img_69da66d88ef1f.png">
+        <!-- FontAwesome 7.1.0 (公共资源) -->
+    <link rel="stylesheet" href="all.min.css">
+    <script src="3.4.17.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="main.css">
+
+    </head>
+<!-- 页面加载动画 -->
+<div id="pageLoadingOverlay" class="page-loading-overlay">
+        <img src="20260412_img_69da9d9c0dee8.png" alt="加载中" class="page-loading-logo">
+        <div class="page-loading-spinner"></div>
+    <div class="page-loading-text">正在加载...</div>
+    <div class="page-loading-progress-container">
+        <div id="pageLoadingProgressBar" class="page-loading-progress-bar"></div>
+    </div>
+    <div id="pageLoadingPercent" class="page-loading-percent">0%</div>
+</div>
+
+<style>
+    /* 公告弹窗样式 - 与 pk02 保持一致 */
+    .announcement-popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    .announcement-popup-overlay.show {
+        display: flex;
+    }
+    
+    .announcement-popup-content {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 90%;
+        width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.3s ease;
+        position: relative;
+    }
+    
+    .announcement-popup-content > *:first-child {
+        margin-top: 0;
+    }
+    
+    .announcement-popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    
+    .announcement-popup-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a202c;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .announcement-popup-title svg {
+        width: 24px;
+        height: 24px;
+        color: #667eea;
+    }
+    
+    .announcement-popup-close {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #f7fafc;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 20px;
+        color: #718096;
+    }
+    
+    .announcement-popup-close:hover {
+        background: #edf2f7;
+        color: #2d3748;
+        transform: rotate(90deg);
+    }
+    
+    .announcement-popup-body {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #4a5568;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: left;
+        direction: ltr;
+        text-indent: 0;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .announcement-popup-body p {
+        text-indent: 0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .announcement-popup-body::first-line {
+        text-indent: 0;
+    }
+    
+    .announcement-popup-body br:first-child {
+        display: none;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        .announcement-popup-content {
+            width: 95%;
+            padding: 20px;
+            border-radius: 16px;
+        }
+        
+        .announcement-popup-title {
+            font-size: 18px;
+        }
+        
+        .announcement-popup-body {
+            font-size: 14px;
+        }
+    }
+
+    /* ── 模拟器 / 虚拟币 / VPN 快捷入口 ────────────────────── */
+    .quick-links-row {
+        display: flex !important;
+        gap: .5rem !important;
+        padding: .5rem .5rem .5rem !important;
+        border-top: 1px solid #e2e8f0 !important;
+    }
+    .quick-link-btn {
+        flex: 1 !important;
+        padding: .75rem .5rem !important;
+        border-radius: .5rem !important;
+        font-size: .9rem !important;
+        font-weight: 500 !important;
+        color: #fff !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: .3rem !important;
+        transition: all .2s !important;
+    }
+    .quick-link-btn.qlb-sim {
+        background: var(--primary-gradient) !important;
+    }
+    .quick-link-btn.qlb-crypto {
+        background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%) !important;
+        color: #5a3e00 !important;
+    }
+    .quick-link-btn.qlb-vpn {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+    }
+
+</style>
+<body id="body-root">
+    <div id="root">
+        <div id="app">
+            <!-- 公告弹窗 -->
+                        <div id="announcementPopup" class="announcement-popup-overlay">
+                <div class="announcement-popup-content">
+                    <div class="announcement-popup-header">
+                        <div class="announcement-popup-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z"/>
+                            </svg>
+                            <span>重要公告</span>
+                        </div>
+                        <button class="announcement-popup-close" id="announcementPopupCloseBtn">×</button>
+                    </div>
+                    <div class="announcement-popup-body">新公司开业,在本链接抽取红包联系108081领取！</div>
+                </div>
+            </div>
+                        <div class="page-container">
+                <div class="page active">
+                    <header class="top-nav">
+    <div class="nav-container">
+        <div class="nav-logo-container">
+                        <div class="nav-logo">
+                <img src="/upload/20260412_img_69da9d9c0dee8.png" alt="张顺导航网🔍猪猪侠.cc" class="w-full h-full object-cover no-image-save">
+            </div>
+                        <div>
+                                <h2 class="nav-title">张顺导航网🔍猪猪侠.cc</h2>
+                                                <p class="nav-subtitle">点开客服添加张顺旺旺拿返现送扶持！！！</p>
+                            </div>
+        </div>
+        <button class="nav-action-button btn-active"><i class="fa fa-share-alt mr-1"></i>分享</button>
+    </div>
+</header>
+
+<!-- 全局分享弹窗 -->
+<div id="sharePopup" class="share-popup">
+    <div class="share-container">
+        <div class="p-5 border-b border-gray-100">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-semibold text-primary">
+                    分享张顺导航网:猪猪侠.cc                </h3>
+                <button id="sharePopupClose" class="text-text-light hover:text-primary transition-colors btn-active">
+                    <i class="fa fa-solid fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="p-5">
+            <div class="mb-5">
+                <p class="text-sm text-text-light mb-2">复制链接</p>
+                <div class="flex">
+                    <input type="text"
+                           class="flex-1 px-3 py-2 text-sm border border-gray-200 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-primary text-primary domain-text"
+                           readonly
+                           value="https://xn--0sq497fa.cc">
+                    <button class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition-colors flex items-center justify-center btn-active btn-copy">
+                        <i class="fa fa-copy mr-1"></i>复制
+                    </button>
+                </div>
+            </div>
+            <p class="text-sm text-text-light mb-3">分享到</p>
+            <div class="grid grid-cols-4 gap-2">
+                <button class="share-platform btn-active" data-platform="qq">
+                    <div class="w-12 h-12 rounded-full bg-[#12B7F5]/10 flex items-center justify-center mb-1">
+                        <i class="fa fa-qq text-[#12B7F5] text-xl"></i>
+                    </div>
+                    <span class="text-xs">QQ</span>
+                </button>
+                <button class="share-platform btn-active" data-platform="weixin">
+                    <div class="w-12 h-12 rounded-full bg-[#07C160]/10 flex items-center justify-center mb-1">
+                        <i class="fa fa-weixin text-[#07C160] text-xl"></i>
+                    </div>
+                    <span class="text-xs">微信</span>
+                </button>
+                <button class="share-platform btn-active" data-platform="telegram">
+                    <div class="w-12 h-12 rounded-full bg-[#26A5E4]/10 flex items-center justify-center mb-1">
+                        <i class="fa fa-paper-plane text-[#26A5E4] text-xl"></i>
+                    </div>
+                    <span class="text-xs">Telegram</span>
+                </button>
+                <button class="share-platform btn-active" data-platform="more">
+                    <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-1">
+                        <i class="fa fa-ellipsis-h text-gray-500 text-xl"></i>
+                    </div>
+                    <span class="text-xs">更多</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// 顶部导航内联控制分享弹窗开关
+document.addEventListener('DOMContentLoaded', function () {
+    var navShareBtn = document.querySelector('.nav-action-button');
+    var sharePopup = document.getElementById('sharePopup');
+    var shareClose = document.getElementById('sharePopupClose');
+    if (navShareBtn && sharePopup) {
+        navShareBtn.addEventListener('click', function () {
+            sharePopup.classList.add('active');
+        });
+    }
+    if (shareClose && sharePopup) {
+        shareClose.addEventListener('click', function () {
+            sharePopup.classList.remove('active');
+        });
+    }
+});
+</script>
+
+
+                                        <section class="mx-3 my-4 rounded-xl shadow-xl overflow-hidden">
+                            <div class="banner-slider">
+                                                                                                        <div class="banner-slide">
+                                                                                    <img src="/upload/20260412_img_69daa3c876f9a.png" alt="轮播图" class="banner-image no-image-save" loading="lazy">
+                                                                            </div>
+                                                                                                        <div class="banner-slide">
+                                                                                    <img src="/upload/20260412_img_69daa3d73b675.png" alt="轮播图" class="banner-image no-image-save" loading="lazy">
+                                                                            </div>
+                                                            </div>
+                    </section>
+                                                            <section class="announcement-bar">
+                        <div class="announcement-container">
+                            <div class="announcement-icon">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="announcement-text">
+                                                                <div class="announcement-scroll" style="animation-duration: 5s;">
+                                    新公司开业,在本链接抽取红包联系108081领取！                                
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                                                            <section class="mx-3 mb-4 rounded-xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+                        <div class="p-2 bg-gray-50 rounded-lg">
+                            <div class="gap-2 app-tab-wrapper">
+                                                                                                                                                    <button
+                                            class="tab-button btn-active active"
+                                            data-type-id="22"
+                                            style="white-space: normal; word-break: break-all; text-align: center;"
+                                        >
+                                            热门游戏                                        </button>
+                                                                                                                    <button
+                                            class="tab-button btn-active "
+                                            data-type-id="23"
+                                            style="white-space: normal; word-break: break-all; text-align: center;"
+                                        >
+                                            实用软件                                        </button>
+                                                                                                </div>
+                        </div>
+                                                <div class="quick-links-row">
+                                                            <a href="/simulator" target="_blank" class="quick-link-btn qlb-sim">
+                                    <i class="fa fa-gamepad"></i>模拟器
+                                </a>
+                                                                                        <a href="/crypto" target="_blank" class="quick-link-btn qlb-crypto">
+                                    <i class="fa fa-coins"></i>虚拟币教程
+                                </a>
+                                                                                        <a href="/vpn" target="_blank" class="quick-link-btn qlb-vpn">
+                                    <i class="fa fa-shield-halved"></i>VPN
+                                </a>
+                                                    </div>
+                                            </section>
+                    <div class="tab-content-container mx-3 mb-6 relative overflow-hidden">
+                                                                                                                    <div class="tab-content active" data-type-id="22">
+                                                                        <div class="grid grid-cols-2 gap-3">
+                                                                                                                                                                                    <a href="?app_click=70" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://rsesra.hfjcl.com/app/register.php?site_id=1064&amp;pt=257BE6EB-C6F6-17BC-76BC-45C795AE2B1F" data-name="领航国际">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260501_img_69f4c9ad19441.png" alt="领航国际" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #fa0000;">
+                                                            领航国际                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=62" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://ncgca.tprsmi.com/app/register.php?site_id=1062&amp;topId=13448&amp;selfPlanId=758" data-name="汇赢国际">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260411_img_69da65a242ab8.png" alt="汇赢国际" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #000000;">
+                                                            汇赢国际                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=63" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://lejva.tprsmi.com/app/register.php?site_id=1058&amp;topId=29003&amp;selfPlanId=5223" data-name="胜天国际">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260412_img_69da963f17ca9.png" alt="胜天国际" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #f52e2e;">
+                                                            胜天国际                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=64" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://onkrcy.fnbpsw.com/app/register.php?site_id=2080&amp;pt=EB7C2DE9-A869-F088-6C13-15938C5FCBD2" data-name="凯旋娱乐">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260412_img_69da963f41eda.png" alt="凯旋娱乐" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #000000;">
+                                                            凯旋娱乐                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=54" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://lncqc.jgqvji.com/app/register.php?site_id=1051&amp;topId=6311764313814658" data-name="TOP娱乐">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/img_696f918ba7c20.jpg" alt="TOP娱乐" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #ff0000;">
+                                                            TOP娱乐                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=65" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://izcvoj.hfjcl.com/app/register.php?site_id=1021&amp;topId=9951764313952601" data-name="多多28">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260412_img_69da963f5e364.png" alt="多多28" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #ee1111;">
+                                                            多多28                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=66" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://xjvueb.fnbpsw.com/app/register.php?site_id=1017&amp;topId=9171764313807516" data-name="亿万28">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260412_img_69da963f7543d.png" alt="亿万28" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #f20707;">
+                                                            亿万28                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=67" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://tfajn.hcjwj.com/app/register.php?site_id=2081&amp;topId=23746&amp;selfPlanId=552" data-name="君临国际">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260412_img_69da963f997e6.png" alt="君临国际" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #ff1414;">
+                                                            君临国际                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                                            <a href="?app_click=72" target="_blank" rel="noopener noreferrer" class="category-card btn-active category-card-double" data-url="https://gfvgx.jgqvji.com/app/register.php?site_id=800&amp;pt=26154147-9087-EF9F-E08E-2793ECFD4264" data-name="壹号娱乐">
+                                                    <div class="category-card-img">
+                                                        <img src="/upload/20260519_img_6a0b4f01e36fe.png" alt="壹号娱乐" class="logo-image no-image-save" loading="lazy">
+                                                    </div>
+                                                    <div class="category-card-content">
+                                                        <div class="category-card-title" style="color: #d51a1a;">
+                                                            壹号娱乐                                                        </div>
+                                                        <div class="category-card-desc">
+                                                            新人大水台 首存100➕88扶持 充值700反288                                                        </div>
+                                                    </div>
+                                                </a>
+                                                                                                                        </div>
+                                </div>
+                                                                                            <div class="tab-content " data-type-id="23">
+                                                                        <div class="grid grid-cols-2 gap-3">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                </div>
+                                                                        </div>
+                </div>
+            </div>
+                        <nav class="bottom-nav">
+                <div class="bottom-nav-container">
+                    <a href="/" class="nav-item active btn-active"><i class="fa fa-home nav-icon"></i><span class="nav-label">首页</span><div class="nav-indicator"></div></a><a href="/?page=service" class="nav-item  btn-active"><i class="fa fa-comments nav-icon"></i><span class="nav-label">客服</span><div class="nav-indicator"></div></a><a href="/?page=discover" class="nav-item  btn-active"><i class="fa fa-compass nav-icon"></i><span class="nav-label">发现</span><div class="nav-indicator"></div></a><a href="/?page=price" class="nav-item  btn-active"><i class="fa fa-gift nav-icon"></i><span class="nav-label">抽奖</span><div class="nav-indicator"></div></a><a href="/?page=prediction" class="nav-item  btn-active"><i class="fa fa-star nav-icon"></i><span class="nav-label">预测</span><div class="nav-indicator"></div></a>                </div>
+            </nav>
+                        <!-- 用户中心悬浮按钮 -->
+<div class="user-center-float" id="user-center-float">
+            <button class="user-center-btn" onclick="openUserCenterPopup()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M6 21c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+</body>
+</html>
+
